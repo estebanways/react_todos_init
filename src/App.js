@@ -59,51 +59,55 @@ function App() {
   // Main part of app
   return (
     <div className="app">
-      {/* 1. Header  */}
-      <h1>Todo List</h1>
+      <div className="todos">
+        {/* 1. Header  */}
+        <h1>Todo List</h1>
 
-      {/* 2. Add new item (input) */}
-      <input
-        type="text"
-        placeholder="Add an item..."
-        value={newItem}
-        onChange={(e) => setNewItem(e.target.value)}
-      />
+        {/* 2. Add new item (input) */}
+        <input
+          type="text"
+          placeholder="Add an item..."
+          value={newItem}
+          onChange={(e) => setNewItem(e.target.value)}
+        />
 
-      {/* Add (button) */}
-      <button className="button-blue" onClick={() => addItem()}>Add</button>
+        {/* Add (button) */}
+        <button className="button-blue" onClick={() => addItem()}>Add</button>
 
-      {/* 3. List of todos (unordered list) */}
-      <ul>
-        {items.map((item) => {
-          return (
-            <div>
-              <li key={item.id} onClick={() => setShowEdit(item.id)}>
-                {item.value} &nbsp;
-                <button
-                  className="button-blue"
-                  onClick={() => deleteItem(item.id)}
-                >
-                  Delete
-                </button>
-              </li>
-
-              {showEdit == item.id ? (
-                <div>
-                  <input
-                    type="text"
-                    value={updatedText}
-                    onChange={(e) => setUpdatedText(e.target.value)}
-                  />
-                  <button onClick={() => editItem(item.id, updatedText)}>
-                    Update
+        {/* 3. List of todos (unordered list) */}
+        <ul>
+          {items.map((item) => {
+            return (
+              <article>
+                <li key={item.id} onClick={() => setShowEdit(item.id)}>
+                  {item.value} &nbsp;
+                  <button
+                    className="button-blue"
+                    onClick={() => deleteItem(item.id)}
+                  >
+                    Delete
                   </button>
-                </div>
-              ) : null}
-            </div>
-          );
-        })}
-      </ul>
+                </li>
+
+                {showEdit == item.id ? (
+                  <div>
+                    <input
+                      type="text"
+                      value={updatedText}
+                      onChange={(e) => setUpdatedText(e.target.value)}
+                    />
+                    <button
+                      className="button-blue" 
+                      onClick={() => editItem(item.id, updatedText)}>
+                      Update
+                    </button>
+                  </div>
+                ) : null}
+              </article>
+            );
+          })}
+        </ul>
+      </div>
     </div>
   );
 }

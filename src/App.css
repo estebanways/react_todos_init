@@ -1,3 +1,26 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+	padding-top: 20px;
+}
+
+.todos {
+	border-radius: 5px;
+  background-color: #D8F3FF;
+  padding: 20px;
+	border: 1px solid grey;
+	width: 300px;
+	box-shadow: 2px 2px;
+}
+
+h1 {
+	text-align: center;
+	background-color: #0c0c0c;
+	color: aliceblue;
+}
+
 ul {
   padding: 0%;
 }
@@ -11,7 +34,7 @@ input[type=text], select {
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  border: 1px solid #0c0c0c;
   border-radius: 4px;
   box-sizing: border-box;
 }
@@ -31,10 +54,11 @@ input[type=submit]:hover {
   background-color: #45a049;
 }
 
-div {
-  border-radius: 5px;
-  background-color: #D8F3FF;
-  padding: 5px;
+input, button {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
 }
 
 .button-blue {
